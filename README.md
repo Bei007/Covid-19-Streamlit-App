@@ -4,7 +4,7 @@ A Streamlit web app that visualizes COVID-19 data globally, providing an interac
  
 [App on Hugging Face Spaces](https://huggingface.co/spaces/Bei007/Covid-19-dashboard) 
 
-Preview the app:
+Preview the app:()
 
 ### Data key features:
 
