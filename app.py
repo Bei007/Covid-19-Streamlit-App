@@ -3,6 +3,8 @@ import pydeck as pdk
 import pandas as pd
 import os
 import calendar
+import numpy as np
+import altair as alt
 
 st.title("Covid-19 Global Dashboard")
 st.subheader("This COVID-19 Dashboard displays a tracker, world map, and time series data on cases, deaths, vaccinations, and recoveries worldwide from 2020 to March 2023.")
@@ -137,6 +139,36 @@ with tab1:
         layers=layers,
         tooltip={"text": tooltip_text},
     ))
+
+
+    
+    df_incident_rate = map_df[['Country_Region','Incident_Rate']]
+    df_incident_rate_grouped = df_incident_rate.groupby(by="Country_Region", as_index=False).agg({"Incident_Rate": "mean"})
+    incident_chart = alt.Chart(df_incident_rate_grouped).mark_bar(color="#731ea4").encode(
+    x=alt.X('Country_Region:N', sort='-y', title='Country'),
+    y=alt.Y('Incident_Rate:Q', title='Incident Rate'),
+    tooltip=['Country_Region', 'Incident_Rate']
+    ).properties(
+    width=700,
+    height=400,
+    title= 'Average Incident Rate per Country'
+    )
+    st.altair_chart(incident_chart, use_container_width=True)
+
+    df_Fatality_Ratio = map_df[['Country_Region','Case_Fatality_Ratio']]
+    df_Fatality_Ratio_grouped = df_Fatality_Ratio.groupby(by="Country_Region", as_index=False).agg({"Case_Fatality_Ratio": "mean"})
+    fatality_chart = alt.Chart(df_Fatality_Ratio_grouped).mark_bar(color="#5c93e4").encode(
+    x=alt.X('Country_Region:N', sort='-y', title='Country'),
+    y=alt.Y('Case_Fatality_Ratio:Q', title='Case Fatality Ratio (%)'),
+    tooltip=['Country_Region', 'Case_Fatality_Ratio']
+    ).properties(
+    width=700,
+    height=400,
+    title='Average Case Fatality Ratio per Country'
+    )
+    st.altair_chart(fatality_chart, use_container_width=True)
+
+
 
 with tab2:
     tab2.subheader("Global Time Series", divider="gray")
