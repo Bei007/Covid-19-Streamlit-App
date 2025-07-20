@@ -6,6 +6,7 @@ import calendar
 import numpy as np
 import altair as alt
 
+
 st.title("Covid-19 Global Dashboard")
 st.subheader("This COVID-19 Dashboard displays a tracker, world map, and time series data on cases, deaths, vaccinations, and recoveries worldwide from 2020 to March 2023.")
 
@@ -71,11 +72,11 @@ with tab1:
     col1, col2 = st.columns(2)
     metrics = []
     with col1:
-        if st.toggle("Confirmed", value=True):
+        if st.toggle("Confirmed 🔵", value=True):
             metrics.append("Confirmed")
 
     with col2:
-        if st.toggle("Deaths"):
+        if st.toggle(" Deaths 🔴"):
             metrics.append("Deaths")
 
     country_options = df.Country_Region.unique().tolist()
