@@ -188,6 +188,7 @@ with tab2:
         value_name="Confirmed"
     )
 
+    st.subheader("Cumulative Comfirmed Cases Timeline")
     df_melt.Date = pd.to_datetime(df_melt.Date)
 
     df_confirmed = df_melt[df_melt["Country/Region"]==country_option_tab2].groupby(by="Date", as_index=False).agg({"Confirmed": "sum"})
@@ -199,6 +200,7 @@ with tab2:
     
     df=pd.read_csv("data/time_series_covid19_deaths_global.csv")
 
+    st.subheader("Cumulative Deaths Timeline")
     df_melt = pd.melt(frame=df,
         id_vars=df.columns[:4],
         value_vars=df.columns[4:],
@@ -221,6 +223,7 @@ with tab2:
         value_name="Vaccinations"
     )
 
+    st.subheader("Cumulative Vaccination Timeline")
     df_melt.Date = pd.to_datetime(df_melt.Date)
 
     df_vaccine_admin = df_melt[df_melt["Country_Region"]==country_option_tab2].groupby(by="Date", as_index=False).agg({"Vaccinations": "sum"})
@@ -230,6 +233,7 @@ with tab2:
 
     df=pd.read_csv("data/time_series_covid19_recovered_global.csv")
 
+    st.subheader("Cumulative Recovered Timeline")
     df_melt = pd.melt(frame=df,
         id_vars=df.columns[:4],
         value_vars=df.columns[4:],
@@ -238,7 +242,8 @@ with tab2:
     )
 
     df_melt.Date = pd.to_datetime(df_melt.Date)
-
+    # Filter dates from 2020 to 2021
+    df_melt = df_melt[(df_melt["Date"] >= "2020-01-01") & (df_melt["Date"] <= "2021-08-04")]
     df_recovered = df_melt[df_melt["Country/Region"]==country_option_tab2].groupby(by="Date", as_index=False).agg({"Recovered": "sum"})
     df_recovered.sort_values(by="Date", inplace=True)
     tab2.line_chart(data=df_recovered, x="Date", y="Recovered")
