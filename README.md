@@ -12,9 +12,9 @@ Preview the app: ![preview](streamlit_app_preview.png)
 
 1. Interactive tracker showing the total confirmed cases, deaths, and vaccinations on a global scale.
 2. Interactive world map with selectable options displaying the number of confirmed cases (in blue) and deaths (in red) by country and month/year.
-3. Bar charts showing incidence rate and case fatality ratio per country.
-4. Time series charts showing the number of confirmed and death cases from January 2020 to March 2023.
-5. Confirmed cases and deaths are clearly distinguished using color-coded dots on the map.
+3. Confirmed cases and deaths are clearly distinguished using color-coded dots (blue & red)on the map.
+4. Bar charts showing incidence rate and case fatality ratio per country.
+5. Time series charts showing the number of confirmed and death cases from January 2020 to March 2023, only recovered showing until August 2021.
 6. Data sourced from the [CSSE at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data).
 
 ### Data Sources:
