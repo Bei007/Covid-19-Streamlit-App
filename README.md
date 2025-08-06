@@ -3,7 +3,7 @@
 A Streamlit web app that visualizes COVID-19 data globally, providing an interactive tracker, world map, and time series analysis from  January 2020 to March 2023.
  
 [App on Hugging Face Spaces](https://huggingface.co/spaces/Bei007/Covid-19-dashboard) 
-[PDF report]()
+
 
 Preview the app: ![preview](streamlit_app_preview.png) 
 
@@ -17,6 +17,7 @@ Preview the app: ![preview](streamlit_app_preview.png)
 4. Bar charts showing incidence rate and case fatality ratio per country.
 5. Time series charts showing the number of confirmed and death cases from January 2020 to March 2023, only recovered showing until August 2021.
 6. Data sourced from the [CSSE at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data).
+7. [PDF report](https://github.com/Bei007/Covid-19-Streamlit-App/blob/main/streamlit_app_report) shows App navigation and data process.
 
 ### Data Sources:
 
