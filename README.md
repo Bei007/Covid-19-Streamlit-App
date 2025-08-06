@@ -3,6 +3,7 @@
 A Streamlit web app that visualizes COVID-19 data globally, providing an interactive tracker, world map, and time series analysis from  January 2020 to March 2023.
  
 [App on Hugging Face Spaces](https://huggingface.co/spaces/Bei007/Covid-19-dashboard) 
+[PDF report]()
 
 Preview the app: ![preview](streamlit_app_preview.png) 
 
